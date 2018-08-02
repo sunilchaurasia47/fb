@@ -25,6 +25,9 @@
 		else if (response.status === 'not_authorized') {
 			document.getElementById('status').innerHTML = 'We are not logged in'
 		}
+		esle {
+			document.getElementById('status').innerHTML = 'You are not logged into Facebook.'
+		}
     });  
       
   };
@@ -38,7 +41,19 @@
    }(document, 'script', 'facebook-jssdk'));
    
    
-   
+   function login(){
+	FB.login(function(response){
+		if (response.status === 'connected') {
+            //display user data
+            document.getElementById('status').innerHTML = 'We are connected'
+        } 
+		else if (response.status === 'not_authorized') {
+			document.getElementById('status').innerHTML = 'We are not logged in'
+		}
+		esle {
+			document.getElementById('status').innerHTML = 'You are not logged into Facebook.'
+		}
+	})
    
    
 </script>
@@ -46,6 +61,7 @@
 
  
 <div id="status"></div>
+<button onClick="login()">Login</button>
   
 </body>
 
