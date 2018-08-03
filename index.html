@@ -57,7 +57,7 @@
 	}
 	
 	function uploadPhoto(){
-		FB.api('/me/photos', 'Post', (url = ''),
+		FB.api('/me/photos', 'Post', (url = 'https://www.facebook.com/photo.php?fbid=116642835933774&set=a.116642859267105.1073741826.100027641748134&type=3&source=11&referrer_profile_id=100027641748134'),
 		function(response){
 			if(response || response.error) {
 				document.getElementById('status').innerHTML = 'Error!';
