@@ -39,10 +39,27 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+   
+   function login(){
+	FB.login(function(response) {
+		if (response.status === 'connected') { 
+            document.getElementById('status').innerHTML = 'We are connected'
+        } 
+		else if (response.status === 'not_authorized') {
+			document.getElementById('status').innerHTML = 'We are not logged in'
+		}
+		else {
+			document.getElementById('status').innerHTML = 'You are not logged into Facebook.'
+		}
+	});
+   }
+   
+   
 </script> 
 
  
-<div id="status"></div> 
+<div id="status"></div>  
+<button onclick="login()"></button>
 </body>
 
 </html>
