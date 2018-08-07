@@ -63,7 +63,7 @@
 		}
 		
 	function uploadPhoto() {
-			FB.api('/me/photos', 'post', {source: 'https://scontent-mxp1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/12107039_1513771898920585_3618649571988879636_n.jpg?oh=cef4dad7d2e036aa8eb48f42d51e7406&oe=56D8EC6A'}, function(response) {
+			FB.api('/me/photos', 'post', {url: './favourites.png'}, function(response) {
 				if (!response || response.error) {
 					document.getElementById('status').innerHTML = "Error!";
 				} else {
