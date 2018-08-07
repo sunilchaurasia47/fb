@@ -11,13 +11,12 @@
 <!--
 
 https://www.youtube.com/watch?v=XYawdJh_mNQ
-https://www.youtube.com/watch?v=BWeZvt_-1Mw
+appId      : '1993590997330413',
 -->
 <script>
   window.fbAsyncInit = function() {
-    FB.init({
-      //appId      : '1993590997330413',
-	  appID 	 : '1993590997330413',
+    FB.init({ 
+	  appID 	 : '1049521455206269',
       cookie     : true,
       xfbml      : true,
       version    : 'v3.1'
@@ -45,7 +44,7 @@ https://www.youtube.com/watch?v=BWeZvt_-1Mw
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
    
- /**  
+   
    function login(){
 	FB.login(function(response){
 		if (response.status === 'connected') {
@@ -61,7 +60,7 @@ https://www.youtube.com/watch?v=BWeZvt_-1Mw
 	});
 	}
 	
-	function uploadPhoto(){
+ function uploadPhoto(){
 		FB.api('/me/photos', 'Post', (url = 'https://www.facebook.com/photo.php?fbid=116642835933774&set=a.116642859267105.1073741826.100027641748134&type=3&source=11&referrer_profile_id=100027641748134'),
 		function(response){
 			if(response || response.error) {
@@ -71,8 +70,7 @@ https://www.youtube.com/watch?v=BWeZvt_-1Mw
 			}
 		}
 		);
-	}
-   **/
+	} 
    
 </script>
 
