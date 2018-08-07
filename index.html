@@ -63,7 +63,7 @@
 		}
 		
 	function uploadPhoto() {
-			FB.api('/me/photos', 'post', {source: 'https://scontent-bom1-1.xx.fbcdn.net/v/t1.0-9/36830418_258973764878921_5857868485849251840_n.jpg?_nc_cat=0&oh=bef06a43d23c680829bfb1cf9c93aeed&oe=5C0BC1FD'}, function(response) {
+			FB.api('/me/photos', 'post', {url: 'https://scontent-bom1-1.xx.fbcdn.net/v/t1.0-9/36830418_258973764878921_5857868485849251840_n.jpg?_nc_cat=0&oh=bef06a43d23c680829bfb1cf9c93aeed&oe=5C0BC1FD'}, function(response) {
 				if (!response || response.error) {
 					document.getElementById('status').innerHTML = "Error!";
 				} else {
