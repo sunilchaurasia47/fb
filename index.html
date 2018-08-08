@@ -7,10 +7,15 @@
 </head>
 
 <body>  
+<!-- AP ID 
+1993590997330413
+443331039407582 
+
+-->
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '1993590997330413',
+      appId      : '443331039407582',
       cookie     : true,
       xfbml      : true,
       version    : 'v3.1'
@@ -53,7 +58,7 @@
 		else {
 			document.getElementById('status').innerHTML = 'You are not logged into Facebook.'
 		}
-	}, {scope: 'email', 'user_photos'});
+	}, {scope: 'email'});
    }
    
    function getInfo() {
