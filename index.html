@@ -75,14 +75,23 @@
 					document.getElementById('status').innerHTML = response.id;
 				}
 			});
-		}	
-   
-   
+		} 
 </script> 
+
+<script>
+		document.getElementById('shareBtn').onclick = function() {
+		  FB.ui({
+			method: 'share',
+			display: 'popup',
+			href: 'https://developers.facebook.com/docs/',
+		  }, function(response){});
+		}
+</script>
 
  
  
 <div id="status"></div>  
+<div id="shareBtn" class="btn btn-success clearfix">Share</div>
 <button onclick="uploadPhoto()">Upload Photo</button>
 <button onclick="getInfo()">Get Info</button>
 <button onclick="login()" id="login">Login</button>
