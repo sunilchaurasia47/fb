@@ -31,22 +31,7 @@
 		  }, function(response){});
 		}
 		
-	document.getElementById('feedBtn').onclick = function() {
-		FB.ui({
-		  method: 'feed',
-		  link: 'https://profilepays.com',
-		  caption: 'Profile Pays',
-		  description: 'Share Ads and Earn Money from Profile Pays',
-		  source: 'https://pbs.twimg.com/?url=' + profile_images/972154872261853184/RnOg6UyU_400x400.jpg + '&h=400&w=400';
-		}, function(response){
-			if(response & !response.error.message) {
-				document.getElementById('lb_msj').html('Link' + response.post_id);
-			}
-			else {
-				document.getElementById('lb)_msj').text('Error......');
-			}
-		});
-	}	
+		
       
     FB.AppEvents.logPageView();   
 	
@@ -103,14 +88,29 @@
 				}
 			});
 		} 
-		
+	function feedBtn() {
+		FB.ui({
+		  method: 'feed',
+		  link: 'https://profilepays.com',
+		  caption: 'Profile Pays',
+		  description: 'Share Ads and Earn Money from Profile Pays',
+		  picture: 'https://pbs.twimg.com/?url=' + profile_images/972154872261853184/RnOg6UyU_400x400.jpg + '&h=400&w=400';
+		}, function(response){
+			if(response & !response.error.message) {
+				document.getElementById('lb_msj').html('Link' + response.post_id);
+			}
+			else {
+				document.getElementById('lb)_msj').text('Error......');
+			}
+		});
+	}	
 		
 </script> 
  
  
  
 <div id="status"></div>  
-<button id="feedBtn">Feed</button>
+<button onclick="feedBtn()">Feed</button>
 <button id="shareBtn">Share</button>
 <button onclick="uploadPhoto()">Upload Photo</button>
 <button onclick="getInfo()">Get Info</button>
