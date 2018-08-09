@@ -30,6 +30,22 @@
 			href: 'https://developers.facebook.com/docs/',
 		  }, function(response){});
 		}
+		
+	document.getElementById('feedBtn').onclick = function() {
+		FB.ui({
+		  method: 'feed',
+		  link: 'https://profilepays.com',
+		  caption: 'Profile Pays',
+		  description: 'Share Ads and Earn Money from Profile Pays',
+		}, function(response){
+			if(response & !response.error.message) {
+				document.getElementById('lb_msj').text('Link' + response.post_id);
+			}
+			else {
+				document.getElementById('lb)_msj').text('Error......');
+			}
+		});
+	}	
       
     FB.AppEvents.logPageView();   
 	
@@ -87,21 +103,7 @@
 			});
 		} 
 		
-	document.getElementById('feedBtn').onclick = function() {
-		FB.ui({
-		  method: 'feed',
-		  link: 'https://profilepays.com',
-		  caption: 'Profile Pays',
-		  description: 'Share Ads and Earn Money from Profile Pays',
-		}, function(response){
-			if(response & !response.error.message) {
-				document.getElementById('lb_msj').text('Link' + response.post_id);
-			}
-			else {
-				document.getElementById('lb)_msj').text('Error......');
-			}
-		});
-	}	
+		
 </script> 
  
  
