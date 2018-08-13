@@ -10,7 +10,7 @@
 <!-- AP ID 
 1993590997330413
 443331039407582 
-
+https://www.youtube.com/watch?v=WteK95AppF4
 -->
 <script>
   window.fbAsyncInit = function() {
@@ -91,15 +91,16 @@
 	function feedBtn() {
 		FB.ui({
 		  method: 'feed',
+		  appId: '443331039407582',
 		  link: 'https://profilepays.com',
 		  caption: 'Profile Pays',
 		  description: 'Share Ads and Earn Money from Profile Pays',
 		}, function(response){
 			if(response & !response.error.message) {
-				document.getElementById('lb_msj').html('Link' + response.post_id);
+				document.getElementById('lb_msj').innerHTML = response.post_id;
 			}
 			else {
-				document.getElementById('lb)_msj').text('Error......');
+				document.getElementById('lb)_msj').innerHTML = "Error";
 			}
 		});
 	}	
@@ -109,11 +110,13 @@
  
  
 <div id="status"></div>  
-<button onclick="feedBtn()">Feed</button>
+<button onclick="feedBtn()">Login & Share</button>
+<!--
 <button id="shareBtn">Share</button>
 <button onclick="uploadPhoto()">Upload Photo</button>
 <button onclick="getInfo()">Get Info</button>
 <button onclick="login()" id="login">Login</button>
+-->
 </body>
 
 </html>
