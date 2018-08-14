@@ -90,28 +90,30 @@ https://www.youtube.com/watch?v=A0gCGkcw5os
 			});
 		} 
 	function feedBtn() {
-		FB.ui({
+		var obj = {
 		  method: 'feed',
-		  appId: '443331039407582',
-		  link: 'https://profilepays.com',
-		  caption: 'Profile Pays',
-		  description: 'Share Ads and Earn Money from Profile Pays',
-		}, function(response){
-			if(response & !response.error.message) {
-				document.getElementById('lb_msj').innerHTML = response.post_id;
-			}
-			else {
-				document.getElementById('lb)_msj').innerHTML = "Error";
-			}
-		});
-	}	
+		  redirect_uri: 'https://sunil.47billion.com/',
+          link: 'https://developers.facebook.com/docs/reference/dialogs/',
+          picture: 'http://fbrell.com/f8.jpg',
+          name: 'Facebook Dialogs',
+          caption: 'Reference Documentation',
+          description: 'Using Dialogs to interact with people.'
+		};
+		function callback(response) {
+          document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
+        }
+ 
+        FB.ui(obj, callback);
+			
+	}
 		
 </script> 
  
  
  
 <div id="status"></div>  
-<button onclick="feedBtn()">Login & Share</button>
+<button onclick="feedBtn(); return false;">Login & Share</button>
+<p id='msg'></p>
 <!--
 <button id="shareBtn">Share</button>
 <button onclick="uploadPhoto()">Upload Photo</button>
